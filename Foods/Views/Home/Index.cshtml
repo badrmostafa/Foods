@@ -1,0 +1,240 @@
+﻿    
+@{ 
+    Layout = "~/Views/Home/_LayoutHome.cshtml";
+}
+
+
+
+<!--================ Start banner section =================-->
+    <section class="home_banner relative">
+        <div class="container-fluid pl-0">
+            <div class="row justify-content-center align-items-center full_height">
+                <div class="col-lg-6 p-0">
+                    <div class="banner_left d-flex justify-content-center flex-column">
+                        <h1>@ViewBag.food.Head</h1>
+                        <p>
+                            @ViewBag.food.Description
+                        </p>
+                        <a class="main_btn" href="#">check our menu</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner_right d-flex justify-content-center align-items-center">
+                        <div class="round-planet planet">
+                            <div class="round-planet planet2">
+                                <div class="round-planet planet3">
+                                    <div class="shape shape1"></div>
+                                    <div class="shape shape2"></div>
+                                    <div class="shape shape3"></div>
+                                    <div class="shape shape4"></div>
+                                    <div class="shape shape5"></div>
+                                    <div class="shape shape6"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="face-img img-fluid" src="@ViewBag.food.Image" alt="">
+    </section>
+    <!--================ End banner section =================-->
+    <!--================ Top Dish Area =================-->
+    <section class="top_dish_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main_title position-relative">
+                        <h1>@ViewBag.topfood.Head</h1>
+                        <hr>
+                        <div class="round-planet planet">
+                            <div class="round-planet planet2">
+                                <div class="shape shape1"></div>
+                                <div class="shape shape2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in ViewBag.top)
+            {
+                <div class="row">
+                    <div class="single_dish col-lg-4 col-md-6 text-center">
+                        <div class="thumb">
+                            <img class="img-fluid" src="@item.Image" alt="">
+                        </div>
+                        <h4>@item.Head1</h4>
+                        <p>
+                            @item.Description
+                        </p>
+                        <h5 class="price">@item.Price</h5>
+                    </div>
+                    
+
+                   
+                </div>
+            }
+        </div>
+    </section>
+    <!--================ End Top Dish Area =================-->
+    <!--================ Menu Area =================-->
+    <section class="menu_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main_title position-relative">
+                        <h1>@ViewBag.menu.Head</h1>
+                        <hr>
+                        <div class="round-planet planet">
+                            <div class="round-planet planet2">
+                                <div class="shape shape1"></div>
+                                <div class="shape shape2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row menu_inner">
+                <div class="col-md-12 col-lg-10 col-xl-6">
+                    <div class="menu_list">
+                        <ul class="list">
+                           @foreach (var item in ViewBag.m)
+                           {
+                            <li>
+                                <h4>
+                                    @item.Head1
+                                    <span>@item.Price</span>
+                                </h4>
+                                <p>@item.Description</p>
+                            </li>
+                           }
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Menu Area =================-->
+    <!--================ Gallery Area =================-->
+    <section class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main_title position-relative">
+                        <h1>@ViewBag.gallery.Head</h1>
+                        <hr>
+                        <div class="round-planet planet">
+                            <div class="round-planet planet2">
+                                <div class="shape shape1"></div>
+                                <div class="shape shape2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           @foreach (var item in ViewBag.g)
+           {
+            <div class="row" id="lightgallery">
+                <div class="col-lg-7 all-image" data-src="@item.Image">
+                    <div class="single-gallery">
+                        <div class="overlay"></div>
+                        <img class="img-fluid w-100" src="@item.Icon" alt="">
+                        <div class="content">
+                            <i class="lnr lnr-picture"></i>
+                        </div>
+                    </div>
+                </div>
+                
+
+               
+            </div>
+           }
+        </div>
+    </section>
+    <!--================ End Gallery Area =================-->
+    <!--================Member Area =================-->
+    <section class="testimonials_area section_gap position-relative">
+        <div class="container">
+           @foreach (var item in ViewBag.client)
+           {
+            <div class="testi_slider owl-carousel">
+                <div class="item">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="@item.Image" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="testi_text">
+                                <h4>@item.Head</h4>
+                                <h5>@item.Head1</h5>
+                                <p>
+                                    @item.Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+           }
+        </div>
+    </section>
+    <!--================End Member Area =================-->
+    <!--================Book Table Area =================-->
+    <section class="reservation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main_title position-relative">
+                        <h1>@ViewBag.reservation.Head</h1>
+                        <hr>
+                        <div class="round-planet planet">
+                            <div class="round-planet planet2">
+                                <div class="shape shape1"></div>
+                                <div class="shape shape2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book_table_inner row align-items-center">
+                <div class="offset-lg-2 offset-md-1 col-lg-8 col-md-10">
+                    <div class="table_form">
+                        <form class="book_table_form row" action="#">
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Select date & time">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <div class="form-select">
+                                    <select>
+                                        <option value="1">Select event</option>
+                                        <option value="1">Select event Cairo</option>
+                                        <option value="1">Select event Tanta</option>
+                                        <option value="1">Select event Giza</option>
+                                        <option value="1">Select event Mansoura</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <button type="submit" value="submit" class="btn submit_btn form-control">Make Reservation</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Book Table Area =================-->

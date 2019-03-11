@@ -1,0 +1,42 @@
+﻿@model Foods.Models.Classes.Gallery
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Gallery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Head)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Head)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icon)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GalleryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

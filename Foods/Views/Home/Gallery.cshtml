@@ -1,0 +1,40 @@
+﻿
+@{ 
+    Layout = "~/Views/Home/_LayoutHome.cshtml";
+}
+<section class="gallery_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title position-relative">
+                    <h1>@ViewBag.gallery.Head</h1>
+                    <hr>
+                    <div class="round-planet planet">
+                        <div class="round-planet planet2">
+                            <div class="shape shape1"></div>
+                            <div class="shape shape2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @foreach (var item in ViewBag.g)
+        {
+            <div class="row" id="lightgallery">
+                <div class="col-lg-7 all-image" data-src="@item.Image">
+                    <div class="single-gallery">
+                        <div class="overlay"></div>
+                        <img class="img-fluid w-100" src="@item.Icon" alt="">
+                        <div class="content">
+                            <i class="lnr lnr-picture"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        }
+    </div>
+</section>

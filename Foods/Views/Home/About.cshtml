@@ -1,0 +1,81 @@
+﻿
+@{ 
+    Layout = "~/Views/Home/_LayoutHome.cshtml";
+}
+
+    <!--================ Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h1>@ViewBag.about.Head</h1>
+                    <div class="page_link">
+                        <a href="index.html">Home</a>
+                        <a href="about-us.html">About Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+            <div class="shape shape4"></div>
+            <div class="shape shape5"></div>
+            <div class="shape shape6"></div>
+            <div class="shape shape7"></div>
+        </div>
+    </section>
+    <!--================End Banner Area =================-->
+    <!--================Story Area =================-->
+    <section class="about_story_area section_gap">
+        <div class="container">
+            <div class="row story_inner">
+                <div class="col-lg-6">
+                    <div class="story_text">
+                        <h2>@ViewBag.about.Head1</h2>
+                        <hr>
+                        <p>
+                            @ViewBag.about.Description
+                        </p>
+                        
+                        <a class="main_btn" href="#">View Full Menu</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="story_img">
+                        <img class="img-fluid" src="@ViewBag.about.Image" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Story Area =================-->
+    <!--================Member Area =================-->
+    <section class="testimonials_area section_gap position-relative">
+    <div class="container">
+        @foreach (var item in ViewBag.client)
+        {
+            <div class="testi_slider owl-carousel">
+                <div class="item">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="@item.Image" alt="">
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="testi_text">
+                                <h4>@item.Head</h4>
+                                <h5>@item.Head1</h5>
+                                <p>
+                                    @item.Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        }
+    </div>
+</section>
+    <!--================End Member Area =================-->
